@@ -1,0 +1,82 @@
+﻿@model List<ProjektZaliczeniowyDziekanat.DAL.Models.WykladowcaDTO>;
+@{
+    ViewData["Title"] = "Wykładowcy - Wirtualny Dziekanat";
+    ViewData["ctrl"] = "Admin";
+    Layout = "AdminLayout";
+}
+
+
+<div class="text-center mt-5 p-5 rounded shadow-lg bg-light">
+    <h1>Wykładowcy</h1>
+
+    <form asp-action="Wykladowcy" method="get">
+        <div class="form-actions">
+            <p>
+                <label for="SearchString" class="m-2"> Szukaj po nazwisku: </label>
+                <input type="text" name="SearchString" class="m-2" value="@ViewData["CurrentFilter"]" />
+                <input type="submit" value="Szukaj" class="btn btn-outline-dark btn-lg px-4 m-2" /> <hr />
+            </p>
+        </div>
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Imię </th>
+                <th> Nazwisko </th>
+                <th> Prowadzony przedmiot </th>
+                <th> Stopień naukowy </th>
+                <th> PESEL </th>
+                <th> Adres zamieszkania </th>
+                <th> Miejsce zamieszkania </th>
+                <th> Narodowość </th>
+                <th> Obywatelstwo </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td> @item.Imie </td>
+                    <td> @item.Nazwisko </td>
+                    <td> @item.ProwadzonyPrzedmiot </td>
+                    <td> @item.StopienNaukowy </td>
+                    <td> @item.PESEL </td>
+                    <td> @item.AdresZamieszkania </td>
+                    <td> @item.MiejsceZamieszkania </td>
+                    <td> @item.Narodowosc </td>
+                    <td> @item.Obywatelstwo </td>
+                    <td> <a asp-action="UsunWykladowce" asp-route-WykladowcaID="@item.WykladowcaID" class="text-decoration-none"> X </a> </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <h1>Dodaj nowego wykładowce</h1>
+    <form asp-action="DodajWykladowce" method="post">
+        <div class="form-actions">
+            <p>
+                <label for="Imie" class="m-2"> Imie: </label>
+                <input type="text" name="Imie" class="m-2" value="" /> <br />
+                <label for="Nazwisko" class="m-2"> Nazwisko: </label>
+                <input type="text" name="Nazwisko" class="m-2" value="" /> <br />
+                <label for="ProwadzonyPrzedmiot" class="m-2"> Prowadzony Przedmiot: </label>
+                <input type="text" name="ProwadzonyPrzedmiot" class="m-2" value="" /> <br />
+                <label for="StopienNaukowy" class="m-2"> Stopień Naukowy: </label>
+                <input type="text" name="StopienNaukowy" class="m-2" value="" /> <br />
+                <label for="PESEL" class="m-2"> PESEL: </label>
+                <input type="text" name="PESEL" class="m-2" value="" /> <br />
+                <label for="AdresZamieszkania" class="m-2"> Adres Zamieszkania: </label>
+                <input type="text" name="AdresZamieszkania" class="m-2" value="" /> <br />
+                <label for="MiejsceZamieszkania" class="m-2"> Miejsce Zamieszkania: </label>
+                <input type="text" name="MiejsceZamieszkania" class="m-2" value="" /> <br />
+                <label for="Narodowosc" class="m-2"> Narodowość: </label>
+                <input type="text" name="Narodowosc" class="m-2" value="" /> <br />
+                <label for="Obywatelstwo" class="m-2"> Obywatelstwo: </label>
+                <input type="text" name="Obywatelstwo" class="m-2" value="" /> <br />
+                <input type="submit" value="Dodaj" class="btn btn-outline-dark btn-lg px-4 m-2" /> <hr />
+            </p>
+        </div>
+    </form>
+</div>
+
+

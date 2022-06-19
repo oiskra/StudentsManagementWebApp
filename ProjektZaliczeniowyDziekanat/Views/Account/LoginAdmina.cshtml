@@ -1,0 +1,63 @@
+﻿
+@model ProjektZaliczeniowyDziekanat.DAL.Models.Admin
+@{
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logowanie - Wirtualny Dziekanat</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body>
+    <div class="container">
+        <main role="main" class="pb-3 justify-content-center align-items-center">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                        <div class="card bg-primary text-white" style="border-radius: 1rem; background-color: rgba(0,0,0, .65) !important;">
+                            <div class="card-body p-5 text-center">
+
+                                <div class="mb-md-5 mt-md-4 pb-5">
+                                    <form asp-controller="Account" asp-action="LoginAdmina" method="post">
+                                        <h2 class="fw-bold mb-2 text-uppercase">Witaj, Adminie!</h2>
+                                        <p class="text-white-50 mb-5">Wirtualny Dziekanat Uniwersytetu</p>
+
+
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" asp-for="Login">Login</label>
+                                            <input type="text" asp-for="Login" class="form-control form-control-lg" />
+                                            <span asp-validation-for="Login" class="text-danger"></span>
+                                        </div>
+
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" asp-for="Haslo">Hasło</label>
+                                            <input type="password" asp-for="Haslo" class="form-control form-control-lg" />
+                                            <span asp-validation-for="Haslo" class="text-danger"></span>
+                                        </div>
+
+                                        <button class="btn btn-outline-success btn-lg px-5" type="submit">Zaloguj</button>
+                                        <button class="btn btn-outline-light btn-lg px-5" asp-controller="Account" asp-action="UserRole">Wróć</button>
+
+                                    </form>
+                                    <span class="text-danger">@ViewData["BadLogin"]</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/script.js"></script>
+</body>
+</html>

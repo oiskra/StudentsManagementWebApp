@@ -1,0 +1,40 @@
+﻿@model List<ProjektZaliczeniowyDziekanat.DAL.Models.StudentOceny>
+@inject ProjektZaliczeniowyDziekanat.Interfaces.IObslugaStudent obsluga
+@{
+    ViewData["ctrl"] = "Student";
+    Layout = "StudentLayout";
+    var listaZajec = Model.Any() ? await obsluga.WyswietlZajeciaAsync(Model.First().Student, "", "") : null;
+
+}
+
+@if (Model.Any())
+{
+    <div class="text-center mt-5 p-5 rounded shadow-lg bg-light">
+        <h1>Oceny</h1>
+        <table class="table">
+            <tbody>
+                @foreach (var zajecia in listaZajec)
+                {
+                    <tr>
+                        <td> @zajecia.NazwaPrzedmiotu </td>
+                        @foreach (var item in Model)
+                            if (zajecia.NazwaPrzedmiotu == item.Zajecia.NazwaPrzedmiotu)
+                            {
+                                <td>@item.Ocena</td>
+
+                            }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+}
+else
+{
+    <div class="text-center mt-5 p-5 rounded shadow-lg bg-light">
+        <h1>Oceny</h1>
+        <h2 class="text-danger">Student nie posiada ocen</h2>
+    </div>
+
+}

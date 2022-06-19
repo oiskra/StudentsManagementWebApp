@@ -1,0 +1,44 @@
+﻿@model List<ProjektZaliczeniowyDziekanat.DAL.Models.Zajecia>;
+@{
+    ViewData["Title"] = "Plan zajęć - Wirtualny Dziekanat";
+    ViewData["ctrl"] = "Wykladowca";
+    Layout = "WykladowcaLayout";
+}
+
+
+<div class="text-center mt-5 p-5 rounded shadow-lg bg-light">
+    <h1>Plan Zajęć</h1>
+
+    <form asp-action="PlanZajec" method="get">
+        <div class="form-actions">
+            <p>
+                <label for="SearchString" class="m-2"> Szukaj po nazwie: </label>
+                <input type="text" name="SearchString" class="m-2" value="@ViewData["CurrentFilter"]" />
+                <input type="submit" value="Szukaj" class="btn btn-outline-dark btn-lg px-4 m-2" /> <hr />
+            </p>
+        </div>
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Grupa </th>
+                <th> <a asp-action="PlanZajec" asp-route-sortOrder="@ViewData["NameSortPar"]"> Nazwa Zajęć </a> </th>
+                <th> <a asp-action="PlanZajec" asp-route-sortOrder="@ViewData["DateSortPar"]"> Termin Zajęć </a> </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td> @item.GrupaNr </td>
+                <td> @item.NazwaPrzedmiotu </td>
+                <td> @item.TerminZajec </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+

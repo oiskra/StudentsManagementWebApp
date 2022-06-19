@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Kontakt - Wirtualny Dziekanat";
+    ViewData["ctrl"] = "Admin";
+    Layout = "AdminLayout";
+}
+
+<div style="height:140px;"></div>
+<section class="mb-4 py-1 rounded bg-light shadow-lg ">
+
+    <h2 class="font-weight-bold text-center my-5">Kontakt</h2>
+
+    <form class="m-5" method="get" href="#">
+        <div class="form-group w-50 mb-3">
+            <label for="exampleFormControlInput1">Imię i nazwisko nadawcy</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" value="Administrator" readonly>
+        </div>
+        <div class="form-group w-50 my-3">
+            <label for="exampleFormControlSelect1">Wybierz odbiorcę</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+                    @*@foreach (var item in @Model)
+                    {
+                        <option>@Model.Imie @Model.Nazwisko</option>
+                    }*@
+            </select>
+        </div>
+        <div class="form-group my-3">
+            <label for="exampleFormControlInput1">Temat</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="form-group my-3">
+            <label for="exampleFormControlTextarea1">Treść</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button class="btn btn-outline-success btn-lg px-4 mt-1" type="submit">Wyślij</button>
+    </form>
+</section>

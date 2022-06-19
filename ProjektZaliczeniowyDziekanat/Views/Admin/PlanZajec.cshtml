@@ -1,0 +1,62 @@
+﻿@model List<ProjektZaliczeniowyDziekanat.DAL.Models.Zajecia>;
+@{
+    ViewData["Title"] = "Plan zajęć - Wirtualny Dziekanat";
+    ViewData["ctrl"] = "Admin";
+    Layout = "AdminLayout";
+}
+
+
+<div class="text-center mt-5 p-5 rounded shadow-lg bg-light">
+    <h1>Plan Zajęć</h1>
+
+    <form asp-action="PlanZajec" method="get">
+        <div class="form-actions">
+            <p>
+                <label for="SearchString" class="m-2"> Szukaj po nazwie: </label>
+                <input type="text" name="SearchString" class="m-2" value="@ViewData["CurrentFilter"]" />
+                <input type="submit" value="Szukaj" class="btn btn-outline-dark btn-lg px-4 m-2" /> <hr />
+            </p>
+        </div>
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Grupa </th>
+                <th> Nazwa Zajęć </th>
+                <th> Termin Zajęć </th>
+                <th> Prowadzący przedmiot </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td> @item.GrupaNr </td>
+                <td> @item.NazwaPrzedmiotu </td>
+                <td> @item.TerminZajec </td>
+                <td> @item.WykladowcaID </td>
+                <td> <a asp-action="UsunZajecia" asp-route-ZajeciaID="@item.ZajeciaID" class="text-decoration-none"> X </a> </td>
+            </tr>
+            }
+        </tbody>
+    </table> <hr />
+    <h1>Dodaj nowe zajęcia do planu</h1>
+    <form asp-action="DodajZajecia" method="post">
+        <div class="form-actions">
+            <p>
+                <label for="GrupaNr" class="m-2"> Grupa: </label>
+                <input type="text" name="GrupaNr" class="m-2" value="" /> <br />
+                <label for="NazwaPrzedmiotu" class="m-2"> Nazwa Przedmiotu: </label>
+                <input type="text" name="NazwaPrzedmiotu" class="m-2" value="" /> <br />
+                <label for="TerminZajec" class="m-2"> Termin Zajęć: </label>
+                <input type="text" name="TerminZajec" class="m-2" value="" /> <br />
+                <label for="WykladowcaID" class="m-2"> Wykladowca ID: </label>
+                <input type="text" name="WykladowcaID" class="m-2" value="" /> <br />
+                <input type="submit" value="Dodaj" class="btn btn-outline-dark btn-lg px-4 m-2" /> <hr />
+            </p>
+        </div>
+    </form>
+</div>
+
+

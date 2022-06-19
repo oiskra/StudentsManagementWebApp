@@ -1,0 +1,84 @@
+﻿@model ProjektZaliczeniowyDziekanat.DAL.Models.StudentDTO
+@{
+    Layout = "StudentLayout";
+    ViewData["Title"] = "Dane - Wirtualny Dziekant";
+    ViewData["ctrl"] = "Student";
+
+}
+
+
+<section id="about" class="about mt-5 p-3 bg-light shadow-lg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <img src="~/jpg/avatar.png" class="img-fluid">
+            </div>
+            <div class="col-lg-8 pt-4 pt-lg-0 content">
+                <h3>Twoje Dane</h3>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <table class="table">
+                            <tr>
+                                <td><strong>Nr Indeksu:</strong></td>
+                                <td><span>@Model.NumerIndeksu</span></td>
+
+                            </tr>
+                            <tr>
+                                <td><strong>Imię:</strong></td>
+                                <td><span>@Model.Imie</span></td>
+
+                            </tr>
+                            <tr>
+                                <td><strong>Nazwisko:</strong></td>
+                                <td><span>@Model.Nazwisko</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Numer Grupy:</strong></td>
+                                <td><span>@Model.GrupaNr</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data ur.:</strong></td>
+                                <td><span>@Model.DataUrodzenia.ToString("d")</span></td>
+
+                            </tr>
+                            <tr>
+                                <td><strong>Pesel:</strong></td>
+                                <td><span>@Model.PESEL</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Miejsce urodzenia:</strong></td>
+                                <td><span>@Model.MiejsceUrodzenia</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Miejsce Zamieszkania:</strong></td>
+                                <td><span>@Model.MiejsceZamieszkania</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Adres Zamieszkania:</strong></td>
+                                <td><span>@Model.AdresZamieszkania</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Narodowosc:</strong></td>
+                                <td><span>@Model.Narodowosc</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Obywatelstwo:</strong></td>
+                                <td><span>@Model.Obywatelstwo</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Zapłacona kwota:</strong></td>
+                                <td><span>@ViewData["platnosc"] zł</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data płatności:</strong></td>
+                                <td><span>@ViewData["dataPlatnosci"]</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>

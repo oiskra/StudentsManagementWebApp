@@ -1,0 +1,66 @@
+﻿@model ProjektZaliczeniowyDziekanat.DAL.Models.WykladowcaDTO
+@{
+    Layout = "WykladowcaLayout";
+    ViewData["Title"] = "Dane -Wirtualny Dziekant";
+    ViewData["ctrl"] = "Wykladowca";
+
+}
+
+
+<section id="about" class="about mt-5 p-3 bg-light rounded shadow-lg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <img src="~/jpg/avatar.png" class="img-fluid">
+            </div>
+            <div class="col-lg-8 pt-4 pt-lg-0 content">
+                <h3>Twoje Dane</h3>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <table class="table">
+                            <tr>
+                                <td><strong>Nazwisko:</strong></td>
+                                <td><span>@Model.Imie</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Imię:</strong></td>
+                                <td><span>@Model.Nazwisko</span></td>
+
+                            </tr>
+                            <tr>
+                                <td><strong>Stopień Naukowy:</strong></td>
+                                <td><span>@Model.StopienNaukowy</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Prowadzony przedmiot:</strong></td>
+                                <td><span>@Model.ProwadzonyPrzedmiot</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pesel:</strong></td>
+                                <td><span>@Model.PESEL</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Adres Zamieszkania:</strong></td>
+                                <td><span>@Model.AdresZamieszkania</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Miejsce Zamieszkania:</strong></td>
+                                <td><span>@Model.MiejsceZamieszkania</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Narodowosc:</strong></td>
+                                <td><span>@Model.Narodowosc</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Obywatelstwo:</strong></td>
+                                <td><span>@Model.Obywatelstwo</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjektZaliczeniowyDziekanat", "ProjektZaliczeniowyDziekanat\ProjektZaliczeniowyDziekanat.csproj", "{D26A618A-5675-4898-A346-C53908DA724A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjektZaliczniowyDziekanat.Test.Unit", "ProjektZaliczniowyDziekanat.Test.Unit\ProjektZaliczniowyDziekanat.Test.Unit.csproj", "{FDC7C7FD-E504-4E67-A558-AE58B0E54ECF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D26A618A-5675-4898-A346-C53908DA724A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D26A618A-5675-4898-A346-C53908DA724A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D26A618A-5675-4898-A346-C53908DA724A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D26A618A-5675-4898-A346-C53908DA724A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDC7C7FD-E504-4E67-A558-AE58B0E54ECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDC7C7FD-E504-4E67-A558-AE58B0E54ECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC7C7FD-E504-4E67-A558-AE58B0E54ECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDC7C7FD-E504-4E67-A558-AE58B0E54ECF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {282E9E4F-92A1-42F3-9CAC-A867604F424F}
+	EndGlobalSection
+EndGlobal
